@@ -2,124 +2,106 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Powerful Song AI</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
-font-family:Arial,sans-serif;
-min-height:100vh;
-background:linear-gradient(145deg,#090014,#18002f,#05000d);
-color:white;
-padding:18px
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+  background:linear-gradient(145deg,#08000f,#1b0035,#05000b);
+  color:white;
+  padding:18px;
 }
 
-.container{max-width:650px;margin:auto}
+.container{
+  max-width:650px;
+  margin:auto;
+}
 
 .logo{
-text-align:center;
-font-size:30px;
-font-weight:900;
-margin-top:15px;
-text-shadow:0 0 20px #b84dff
+  text-align:center;
+  font-size:30px;
+  font-weight:900;
+  margin:18px 0 6px;
+  text-shadow:0 0 25px #b000ff;
 }
 
 .subtitle{
-text-align:center;
-color:#bbb;
-margin:8px 0 22px
+  text-align:center;
+  color:#bbb;
+  margin-bottom:22px;
 }
 
 .card{
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.15);
-border-radius:22px;
-padding:20px;
-backdrop-filter:blur(12px)
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:22px;
+  padding:20px;
+  backdrop-filter:blur(12px);
 }
 
 label{
-display:block;
-margin:15px 0 8px;
-font-weight:bold
+  display:block;
+  margin:14px 0 7px;
+  font-weight:bold;
 }
 
 textarea,select{
-width:100%;
-border:0;
-outline:none;
-border-radius:13px;
-padding:14px;
-font-size:16px;
-background:#171020;
-color:white
+  width:100%;
+  border:0;
+  outline:none;
+  border-radius:13px;
+  padding:14px;
+  font-size:16px;
+  background:#160e20;
+  color:white;
 }
 
 textarea{
-min-height:130px;
-resize:vertical
+  min-height:150px;
+  resize:vertical;
 }
 
 button{
-width:100%;
-margin-top:20px;
-padding:16px;
-border:0;
-border-radius:15px;
-font-size:18px;
-font-weight:bold;
-color:white;
-background:linear-gradient(90deg,#7b2cff,#d100ff);
-box-shadow:0 0 25px rgba(170,0,255,.45)
+  width:100%;
+  margin-top:20px;
+  padding:16px;
+  border:0;
+  border-radius:15px;
+  font-size:17px;
+  font-weight:bold;
+  color:white;
+  background:linear-gradient(90deg,#7928ff,#d000ff);
+  box-shadow:0 0 25px rgba(180,0,255,.45);
 }
 
-button:active{transform:scale(.98)}
-
-.result{
-display:none;
-margin-top:20px;
-padding:18px;
-border-radius:18px;
-background:rgba(0,0,0,.35)
+button:disabled{
+  opacity:.6;
 }
-
-.result h2{margin-bottom:12px}
 
 .status{
-color:#d6b0ff;
-line-height:1.7
+  margin-top:18px;
+  padding:15px;
+  border-radius:14px;
+  background:rgba(0,0,0,.35);
+  line-height:1.6;
+  display:none;
 }
 
-.progress{
-display:none;
-margin-top:15px;
-height:8px;
-background:#281735;
-border-radius:10px;
-overflow:hidden
+audio{
+  width:100%;
+  margin-top:15px;
+  display:none;
 }
-
-.bar{
-height:100%;
-width:0%;
-background:linear-gradient(90deg,#7b2cff,#d100ff);
-transition:width .5s
-}
-
-.audioBox{
-display:none;
-margin-top:18px
-}
-
-audio{width:100%}
 
 .footer{
-text-align:center;
-color:#777;
-margin-top:22px;
-font-size:12px
+  text-align:center;
+  color:#777;
+  margin-top:22px;
+  font-size:12px;
 }
 </style>
 </head>
@@ -128,152 +110,424 @@ font-size:12px
 
 <div class="container">
 
-<div class="logo">🎵 POWERFUL SONG AI</div>
+  <div class="logo">🎵 POWERFUL SONG AI</div>
 
-<div class="subtitle">
-Create Powerful Original Songs
-</div>
+  <div class="subtitle">
+    Create Your Own Powerful Original Song
+  </div>
 
-<div class="card">
+  <div class="card">
 
-<label>🔥 Song Topic</label>
+    <label>🔥 Song Topic</label>
 
-<textarea id="topic"
-placeholder="Example: Karna's Last Prayer, Mahadev Bhakti, Independence Day..."></textarea>
+    <textarea id="topic"
+      placeholder="Example: Karna's Last Prayer"></textarea>
 
-<label>🌐 Language</label>
+    <label>🌐 Language</label>
 
-<select id="language">
-<option>Hindi</option>
-<option>Bengali</option>
-<option>English</option>
-</select>
+    <select id="language">
+      <option>Hindi</option>
+      <option>Bengali</option>
+      <option>English</option>
+    </select>
 
-<label>🎼 Music Style</label>
+    <label>🎼 Music Style</label>
 
-<select id="style">
-<option>Powerful Cinematic</option>
-<option>Epic Indian</option>
-<option>Powerful Bollywood</option>
-<option>Devotional</option>
-<option>Mahadev Bhakti</option>
-<option>Sad Romantic</option>
-<option>Cinematic Emotional</option>
-<option>Patriotic</option>
-<option>Purulia DJ</option>
-<option>Desi DJ</option>
-</select>
+    <select id="style">
+      <option>Powerful Cinematic</option>
+      <option>Epic Indian</option>
+      <option>Powerful Bollywood</option>
+      <option>Devotional</option>
+      <option>Mahadev Bhakti</option>
+      <option>Patriotic</option>
+      <option>Sad Emotional</option>
+      <option>Romantic</option>
+      <option>Purulia DJ</option>
+      <option>Desi DJ</option>
+    </select>
 
-<label>🎤 Vocal Type</label>
+    <label>⏱️ Duration</label>
 
-<select id="vocal">
-<option>Powerful Male Vocal</option>
-<option>Emotional Male Vocal</option>
-<option>Powerful Female Vocal</option>
-<option>Emotional Female Vocal</option>
-<option>Male + Female Duet</option>
-<option>Epic Chorus</option>
-</select>
+    <select id="duration">
+      <option value="30">30 Seconds Test</option>
+      <option value="60">1 Minute</option>
+      <option value="90">1.5 Minutes</option>
+      <option value="120">2 Minutes</option>
+      <option value="180">3 Minutes</option>
+    </select>
 
-<label>⏱️ Duration</label>
+    <button id="generate" onclick="generateSong()">
+      🔥 GENERATE POWERFUL SONG
+    </button>
 
-<select id="duration">
-<option>3 Minutes</option>
-<option>4 Minutes</option>
-<option>5 Minutes</option>
-<option>6 Minutes</option>
-</select>
+    <div class="status" id="status"></div>
 
-<button onclick="generateSong()">
-🔥 GENERATE POWERFUL SONG
-</button>
+    <audio id="audio" controls></audio>
 
-<div class="result" id="result">
+  </div>
 
-<h2>🎶 Your Song</h2>
-
-<div class="status" id="status"></div>
-
-<div class="progress" id="progress">
-<div class="bar" id="bar"></div>
-</div>
-
-<div class="audioBox" id="audioBox">
-<audio id="audio" controls></audio>
-</div>
+  <div class="footer">
+    Powerful Song AI • Original Music Creation
+  </div>
 
 </div>
 
-</div>
 
-<div class="footer">
-POWERFUL SONG AI • Original Music Creation
-</div>
+<script type="module">
 
-</div>
+import { Client } from
+"https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
 
-<script>
 
-function generateSong(){
+/*
+  HeartMuLa public Space
+*/
+const SPACE = "projectlosangeles/HeartMuLa";
 
-const topic=document.getElementById("topic").value.trim();
-const language=document.getElementById("language").value;
-const style=document.getElementById("style").value;
-const vocal=document.getElementById("vocal").value;
-const duration=document.getElementById("duration").value;
 
-if(!topic){
-alert("Please enter a song topic first.");
-return;
+function buildLyrics(topic, language){
+
+  if(language === "Hindi"){
+
+    return `[Intro]
+तेरी कहानी आज फिर गूंजे,
+दिल के अंदर आग जले।
+
+[Verse]
+${topic} की ये कहानी,
+दर्द भी है, शान भी।
+जो मिट गया देश के लिए,
+उसकी अमर पहचान भी।
+
+[Prechorus]
+आंधियां चाहे कितनी आएं,
+हौसला हमारा ना झुके।
+
+[Chorus]
+तेरा नाम अमर रहेगा,
+तेरी बात अमर रहे।
+जब तक ये दुनिया जिंदा है,
+तेरा जज्बा जिंदा रहे।
+
+[Verse]
+रास्ते कठिन थे फिर भी,
+कदम कभी पीछे ना हुए।
+जिसने अपना सब कुछ दे दिया,
+उसके सपने अधूरे ना हुए।
+
+[Bridge]
+आज भी दिल पुकारे,
+तेरी गाथा कौन भुलाए।
+
+[Chorus]
+तेरा नाम अमर रहेगा,
+तेरी बात अमर रहे।
+जब तक ये दुनिया जिंदा है,
+तेरा जज्बा जिंदा रहे।
+
+[Outro]
+तेरी कहानी खत्म नहीं,
+हर दिल में तू जिंदा रहे।`;
+
+  }
+
+  if(language === "Bengali"){
+
+    return `[Intro]
+তোর গল্প আজও জাগে,
+হৃদয়ের গভীরে।
+
+[Verse]
+${topic} এর সেই কাহিনি,
+ব্যথা আছে, গর্বও আছে।
+যে দিয়েছে নিজের সব,
+তার নাম হৃদয়ে বাঁচে।
+
+[Prechorus]
+ঝড় এলেও পথ থামবে না,
+আগুন হলেও মন হারবে না।
+
+[Chorus]
+তোর নাম অমর থাকবে,
+তোর কথা অমর রবে।
+যতদিন এই পৃথিবী আছে,
+তোর সাহস বেঁচে রবে।
+
+[Verse]
+কঠিন পথে চলেছিলি,
+পিছিয়ে কখনও যাসনি।
+নিজের জীবন দিয়ে তুই,
+স্বপ্নগুলো হারাসনি।
+
+[Bridge]
+আজও তোকে মনে পড়ে,
+গল্প তোরই সবাই গড়ে।
+
+[Chorus]
+তোর নাম অমর থাকবে,
+তোর কথা অমর রবে।
+যতদিন এই পৃথিবী আছে,
+তোর সাহস বেঁচে রবে।
+
+[Outro]
+তোর গল্প শেষ নয়,
+প্রতিটি মনে বেঁচে রয়।`;
+
+  }
+
+  return `[Intro]
+Your story still remains,
+Burning through the night.
+
+[Verse]
+${topic} is the story,
+Of courage and of pain.
+Those who gave their everything,
+Will never fade again.
+
+[Prechorus]
+Let the storm come,
+Let the darkness rise.
+
+[Chorus]
+Your name will live forever,
+Your fire will never fade.
+As long as hearts are beating,
+Your memory will remain.
+
+[Verse]
+Every road was difficult,
+But you never turned away.
+You gave everything you had,
+To light another day.
+
+[Bridge]
+Your story still is calling,
+Your courage still is here.
+
+[Chorus]
+Your name will live forever,
+Your fire will never fade.
+As long as hearts are beating,
+Your memory will remain.
+
+[Outro]
+The story never ends,
+You live within our hearts.`;
 }
 
-const result=document.getElementById("result");
-const status=document.getElementById("status");
-const progress=document.getElementById("progress");
-const bar=document.getElementById("bar");
 
-result.style.display="block";
-progress.style.display="block";
+function buildTags(style){
 
-bar.style.width="10%";
+  const styles = {
 
-status.innerHTML=
-"⚡ Preparing powerful song...<br><br>"+
-"🔥 Topic: "+topic+"<br>"+
-"🌐 Language: "+language+"<br>"+
-"🎼 Style: "+style+"<br>"+
-"🎤 Vocal: "+vocal+"<br>"+
-"⏱️ Duration: "+duration+"<br><br>"+
-"🔄 Connecting to AI Music Engine...";
+    "Powerful Cinematic":
+    "male,cinematic,epic,emotional,powerful,orchestral,drums,Strings,bass",
 
-let p=10;
+    "Epic Indian":
+    "male,epic,Indian,cinematic,powerful,drums,Strings,bass",
 
-const timer=setInterval(()=>{
+    "Powerful Bollywood":
+    "male,Bollywood,powerful,emotional,drums,Strings,piano",
 
-p+=10;
+    "Devotional":
+    "male,devotional,emotional,faith,powerful,Strings,drums",
 
-if(p<90){
-bar.style.width=p+"%";
+    "Mahadev Bhakti":
+    "male,devotional,epic,powerful,faith,drums,Strings,bass",
+
+    "Patriotic":
+    "male,patriotic,epic,powerful,emotional,drums,Strings,bass",
+
+    "Sad Emotional":
+    "male,Ballad,Sad,emotional,piano,Strings,Longing",
+
+    "Romantic":
+    "male,Romantic,emotional,piano,acoustic guitar,Strings",
+
+    "Purulia DJ":
+    "male,electronic,driving,energetic,drum machine,bass,synthesizer",
+
+    "Desi DJ":
+    "male,electronic,energetic,drum machine,bass,synthesizer,pop"
+
+  };
+
+  return styles[style] ||
+    "male,cinematic,powerful,emotional,drums,Strings";
 }
 
-if(p>=90){
 
-clearInterval(timer);
+async function generateSong(){
 
-bar.style.width="100%";
+  const topic =
+    document.getElementById("topic").value.trim();
 
-status.innerHTML=
-"🎵 Song request prepared successfully!<br><br>"+
-"🔥 Powerful original composition settings ready.<br>"+
-"🎼 "+style+"<br>"+
-"🎤 "+vocal+"<br><br>"+
-"⚠️ AI audio engine এখনো এই GitHub page-এর সঙ্গে যুক্ত হয়নি।"+
-"<br><br>"+
-"পরের ধাপে আমরা আসল music-generation backend যুক্ত করব।";
+  const language =
+    document.getElementById("language").value;
 
-}
+  const style =
+    document.getElementById("style").value;
 
-},400);
+  const duration =
+    Number(document.getElementById("duration").value);
+
+  const button =
+    document.getElementById("generate");
+
+  const status =
+    document.getElementById("status");
+
+  const audio =
+    document.getElementById("audio");
+
+
+  if(!topic){
+
+    alert("আগে Song Topic লিখো।");
+
+    return;
+  }
+
+
+  button.disabled=true;
+
+  status.style.display="block";
+
+  status.innerHTML =
+    "⏳ AI Music Engine connecting...";
+
+
+  audio.style.display="none";
+
+  try{
+
+    status.innerHTML =
+      "🔌 HeartMuLa Music Engine-এর সঙ্গে কানেক্ট হচ্ছে...";
+
+
+    const app =
+      await Client.connect(SPACE);
+
+
+    status.innerHTML =
+      "🎼 Lyrics + Music Style পাঠানো হচ্ছে...";
+
+
+    const lyrics =
+      buildLyrics(topic,language);
+
+    const tags =
+      buildTags(style);
+
+
+    /*
+      IMPORTANT:
+      HeartMuLa API endpoint/input order
+      may change with the Space version.
+    */
+
+    const api =
+      await app.view_api();
+
+
+    console.log("HeartMuLa API:",api);
+
+
+    status.innerHTML =
+      "🎵 Music generation শুরু হয়েছে...<br>" +
+      "এখন queue-তে থাকলে একটু সময় লাগতে পারে।";
+
+
+    /*
+      Try the common HeartMuLa endpoint.
+    */
+
+    const result =
+      await app.predict("/generate_music",[
+        lyrics,
+        tags,
+        duration,
+        1.0,
+        50,
+        1.5
+      ]);
+
+
+    console.log("Result:",result);
+
+
+    let output = null;
+
+
+    if(result && result.data){
+
+      for(const item of result.data){
+
+        if(typeof item === "string" &&
+           (item.endsWith(".mp3") ||
+            item.endsWith(".wav") ||
+            item.includes("audio"))){
+
+          output=item;
+          break;
+        }
+
+        if(item && typeof item === "object"){
+
+          if(item.url){
+
+            output=item.url;
+            break;
+
+          }
+
+          if(item.path){
+
+            output=item.path;
+            break;
+
+          }
+
+        }
+
+      }
+
+    }
+
+
+    if(output){
+
+      audio.src=output;
+
+      audio.style.display="block";
+
+      status.innerHTML =
+        "✅ গান তৈরি হয়েছে!<br>" +
+        "▶️ নিচের Play বাটনে চাপো।";
+
+    }else{
+
+      status.innerHTML =
+        "⚠️ Music engine response এসেছে, কিন্তু audio URL পাওয়া যায়নি।<br><br>" +
+        "API response console-এ দেখা যাবে।";
+
+    }
+
+
+  }catch(error){
+
+    console.error(error);
+
+    status.innerHTML =
+      "❌ Music generation এখন সম্পূর্ণ হয়নি।<br><br>" +
+      "HeartMuLa Space-এর API endpoint/version পরিবর্তিত হলে এই error হতে পারে।<br><br>" +
+      "Error: " + error.message;
+
+  }
+
+
+  button.disabled=false;
 
 }
 
