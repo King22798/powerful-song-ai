@@ -2,113 +2,124 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Powerful Song AI</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:Arial,sans-serif;
-  min-height:100vh;
-  background:linear-gradient(145deg,#090014,#18002f,#05000d);
-  color:white;
-  padding:20px;
+font-family:Arial,sans-serif;
+min-height:100vh;
+background:linear-gradient(145deg,#090014,#18002f,#05000d);
+color:white;
+padding:18px
 }
 
-.container{
-  max-width:600px;
-  margin:auto;
-}
+.container{max-width:650px;margin:auto}
 
 .logo{
-  text-align:center;
-  font-size:30px;
-  font-weight:900;
-  margin-top:20px;
-  text-shadow:0 0 20px #9b4dff;
+text-align:center;
+font-size:30px;
+font-weight:900;
+margin-top:15px;
+text-shadow:0 0 20px #b84dff
 }
 
 .subtitle{
-  text-align:center;
-  color:#bbb;
-  margin:8px 0 25px;
+text-align:center;
+color:#bbb;
+margin:8px 0 22px
 }
 
 .card{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:22px;
-  padding:20px;
-  backdrop-filter:blur(10px);
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+border-radius:22px;
+padding:20px;
+backdrop-filter:blur(12px)
 }
 
 label{
-  display:block;
-  margin:15px 0 8px;
-  font-weight:bold;
+display:block;
+margin:15px 0 8px;
+font-weight:bold
 }
 
-textarea,
-select{
-  width:100%;
-  border:0;
-  outline:none;
-  border-radius:13px;
-  padding:14px;
-  font-size:16px;
-  background:#171020;
-  color:white;
+textarea,select{
+width:100%;
+border:0;
+outline:none;
+border-radius:13px;
+padding:14px;
+font-size:16px;
+background:#171020;
+color:white
 }
 
 textarea{
-  min-height:120px;
-  resize:vertical;
+min-height:130px;
+resize:vertical
 }
 
 button{
-  width:100%;
-  margin-top:22px;
-  padding:16px;
-  border:0;
-  border-radius:15px;
-  font-size:18px;
-  font-weight:bold;
-  color:white;
-  background:linear-gradient(90deg,#7b2cff,#d100ff);
-  box-shadow:0 0 25px rgba(170,0,255,.4);
+width:100%;
+margin-top:20px;
+padding:16px;
+border:0;
+border-radius:15px;
+font-size:18px;
+font-weight:bold;
+color:white;
+background:linear-gradient(90deg,#7b2cff,#d100ff);
+box-shadow:0 0 25px rgba(170,0,255,.45)
 }
 
-button:active{
-  transform:scale(.98);
-}
+button:active{transform:scale(.98)}
 
 .result{
-  display:none;
-  margin-top:20px;
-  padding:18px;
-  border-radius:18px;
-  background:rgba(0,0,0,.35);
+display:none;
+margin-top:20px;
+padding:18px;
+border-radius:18px;
+background:rgba(0,0,0,.35)
 }
 
-.result h2{
-  margin-bottom:10px;
-}
+.result h2{margin-bottom:12px}
 
 .status{
-  color:#c78cff;
-  line-height:1.6;
+color:#d6b0ff;
+line-height:1.7
 }
 
+.progress{
+display:none;
+margin-top:15px;
+height:8px;
+background:#281735;
+border-radius:10px;
+overflow:hidden
+}
+
+.bar{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#7b2cff,#d100ff);
+transition:width .5s
+}
+
+.audioBox{
+display:none;
+margin-top:18px
+}
+
+audio{width:100%}
+
 .footer{
-  text-align:center;
-  color:#777;
-  margin-top:25px;
-  font-size:12px;
+text-align:center;
+color:#777;
+margin-top:22px;
+font-size:12px
 }
 </style>
 </head>
@@ -117,65 +128,87 @@ button:active{
 
 <div class="container">
 
-  <div class="logo">🎵 POWERFUL SONG AI</div>
+<div class="logo">🎵 POWERFUL SONG AI</div>
 
-  <div class="subtitle">
-    Create Your Own Powerful Original Song
-  </div>
+<div class="subtitle">
+Create Powerful Original Songs
+</div>
 
-  <div class="card">
+<div class="card">
 
-    <label>🔥 Song Topic</label>
+<label>🔥 Song Topic</label>
 
-    <textarea id="topic"
-      placeholder="Example: Karna's Last Prayer"></textarea>
+<textarea id="topic"
+placeholder="Example: Karna's Last Prayer, Mahadev Bhakti, Independence Day..."></textarea>
 
-    <label>🌐 Language</label>
+<label>🌐 Language</label>
 
-    <select id="language">
-      <option>Hindi</option>
-      <option>Bengali</option>
-      <option>English</option>
-    </select>
-
-    <label>🎼 Music Style</label>
-
-    <select id="style">
-      <option>Powerful Cinematic</option>
-      <option>Powerful Bollywood</option>
-      <option>Sad Romantic</option>
-      <option>Devotional</option>
-      <option>Mahadev Bhakti</option>
-      <option>Purulia DJ</option>
-      <option>Desi DJ</option>
-      <option>Epic Indian</option>
-      <option>Patriotic</option>
-      <option>Cinematic Emotional</option>
+<select id="language">
+<option>Hindi</option>
+<option>Bengali</option>
+<option>English</option>
 </select>
 
-    <label>⏱️ Maximum Duration</label>
+<label>🎼 Music Style</label>
 
-    <select id="duration">
-      <option>3 Minutes</option>
-      <option>4 Minutes</option>
-      <option>5 Minutes</option>
-      <option>6 Minutes</option>
-    </select>
+<select id="style">
+<option>Powerful Cinematic</option>
+<option>Epic Indian</option>
+<option>Powerful Bollywood</option>
+<option>Devotional</option>
+<option>Mahadev Bhakti</option>
+<option>Sad Romantic</option>
+<option>Cinematic Emotional</option>
+<option>Patriotic</option>
+<option>Purulia DJ</option>
+<option>Desi DJ</option>
+</select>
 
-    <button onclick="generateSong()">
-      🔥 GENERATE POWERFUL SONG
-    </button>
+<label>🎤 Vocal Type</label>
 
-    <div class="result" id="result">
-      <h2>🎶 Song Request</h2>
-      <div class="status" id="status"></div>
-    </div>
+<select id="vocal">
+<option>Powerful Male Vocal</option>
+<option>Emotional Male Vocal</option>
+<option>Powerful Female Vocal</option>
+<option>Emotional Female Vocal</option>
+<option>Male + Female Duet</option>
+<option>Epic Chorus</option>
+</select>
 
-  </div>
+<label>⏱️ Duration</label>
 
-  <div class="footer">
-    Powerful Song AI • Original Music Creation
-  </div>
+<select id="duration">
+<option>3 Minutes</option>
+<option>4 Minutes</option>
+<option>5 Minutes</option>
+<option>6 Minutes</option>
+</select>
+
+<button onclick="generateSong()">
+🔥 GENERATE POWERFUL SONG
+</button>
+
+<div class="result" id="result">
+
+<h2>🎶 Your Song</h2>
+
+<div class="status" id="status"></div>
+
+<div class="progress" id="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<div class="audioBox" id="audioBox">
+<audio id="audio" controls></audio>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+POWERFUL SONG AI • Original Music Creation
+</div>
 
 </div>
 
@@ -183,38 +216,64 @@ button:active{
 
 function generateSong(){
 
-  const topic =
-    document.getElementById("topic").value.trim();
+const topic=document.getElementById("topic").value.trim();
+const language=document.getElementById("language").value;
+const style=document.getElementById("style").value;
+const vocal=document.getElementById("vocal").value;
+const duration=document.getElementById("duration").value;
 
-  const language =
-    document.getElementById("language").value;
+if(!topic){
+alert("Please enter a song topic first.");
+return;
+}
 
-  const style =
-    document.getElementById("style").value;
+const result=document.getElementById("result");
+const status=document.getElementById("status");
+const progress=document.getElementById("progress");
+const bar=document.getElementById("bar");
 
-  const duration =
-    document.getElementById("duration").value;
+result.style.display="block";
+progress.style.display="block";
 
-  const result =
-    document.getElementById("result");
+bar.style.width="10%";
 
-  const status =
-    document.getElementById("status");
+status.innerHTML=
+"⚡ Preparing powerful song...<br><br>"+
+"🔥 Topic: "+topic+"<br>"+
+"🌐 Language: "+language+"<br>"+
+"🎼 Style: "+style+"<br>"+
+"🎤 Vocal: "+vocal+"<br>"+
+"⏱️ Duration: "+duration+"<br><br>"+
+"🔄 Connecting to AI Music Engine...";
 
-  if(!topic){
-    alert("Please enter a song topic first.");
-    return;
-  }
+let p=10;
 
-  result.style.display="block";
+const timer=setInterval(()=>{
 
-  status.innerHTML =
-    "⚡ Preparing your song...<br><br>" +
-    "Topic: " + topic + "<br>" +
-    "Language: " + language + "<br>" +
-    "Style: " + style + "<br>" +
-    "Duration: " + duration + "<br><br>" +
-    "🎵 AI Music Engine will be connected next.";
+p+=10;
+
+if(p<90){
+bar.style.width=p+"%";
+}
+
+if(p>=90){
+
+clearInterval(timer);
+
+bar.style.width="100%";
+
+status.innerHTML=
+"🎵 Song request prepared successfully!<br><br>"+
+"🔥 Powerful original composition settings ready.<br>"+
+"🎼 "+style+"<br>"+
+"🎤 "+vocal+"<br><br>"+
+"⚠️ AI audio engine এখনো এই GitHub page-এর সঙ্গে যুক্ত হয়নি।"+
+"<br><br>"+
+"পরের ধাপে আমরা আসল music-generation backend যুক্ত করব।";
+
+}
+
+},400);
 
 }
 
