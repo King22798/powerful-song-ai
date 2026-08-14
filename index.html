@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Powerful Song AI</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+  background:linear-gradient(145deg,#090014,#18002f,#05000d);
+  color:white;
+  padding:20px;
+}
+
+.container{
+  max-width:600px;
+  margin:auto;
+}
+
+.logo{
+  text-align:center;
+  font-size:30px;
+  font-weight:900;
+  margin-top:20px;
+  text-shadow:0 0 20px #9b4dff;
+}
+
+.subtitle{
+  text-align:center;
+  color:#bbb;
+  margin:8px 0 25px;
+}
+
+.card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:22px;
+  padding:20px;
+  backdrop-filter:blur(10px);
+}
+
+label{
+  display:block;
+  margin:15px 0 8px;
+  font-weight:bold;
+}
+
+textarea,
+select{
+  width:100%;
+  border:0;
+  outline:none;
+  border-radius:13px;
+  padding:14px;
+  font-size:16px;
+  background:#171020;
+  color:white;
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+button{
+  width:100%;
+  margin-top:22px;
+  padding:16px;
+  border:0;
+  border-radius:15px;
+  font-size:18px;
+  font-weight:bold;
+  color:white;
+  background:linear-gradient(90deg,#7b2cff,#d100ff);
+  box-shadow:0 0 25px rgba(170,0,255,.4);
+}
+
+button:active{
+  transform:scale(.98);
+}
+
+.result{
+  display:none;
+  margin-top:20px;
+  padding:18px;
+  border-radius:18px;
+  background:rgba(0,0,0,.35);
+}
+
+.result h2{
+  margin-bottom:10px;
+}
+
+.status{
+  color:#c78cff;
+  line-height:1.6;
+}
+
+.footer{
+  text-align:center;
+  color:#777;
+  margin-top:25px;
+  font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="logo">🎵 POWERFUL SONG AI</div>
+
+  <div class="subtitle">
+    Create Your Own Powerful Original Song
+  </div>
+
+  <div class="card">
+
+    <label>🔥 Song Topic</label>
+
+    <textarea id="topic"
+      placeholder="Example: Karna's Last Prayer"></textarea>
+
+    <label>🌐 Language</label>
+
+    <select id="language">
+      <option>Hindi</option>
+      <option>Bengali</option>
+      <option>English</option>
+    </select>
+
+    <label>🎼 Music Style</label>
+
+    <select id="style">
+      <option>Powerful Cinematic</option>
+      <option>Epic Indian</option>
+      <option>Devotional</option>
+      <option>Emotional</option>
+      <option>DJ</option>
+    </select>
+
+    <label>⏱️ Maximum Duration</label>
+
+    <select id="duration">
+      <option>3 Minutes</option>
+      <option>4 Minutes</option>
+      <option>5 Minutes</option>
+      <option>6 Minutes</option>
+    </select>
+
+    <button onclick="generateSong()">
+      🔥 GENERATE POWERFUL SONG
+    </button>
+
+    <div class="result" id="result">
+      <h2>🎶 Song Request</h2>
+      <div class="status" id="status"></div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Powerful Song AI • Original Music Creation
+  </div>
+
+</div>
+
+<script>
+
+function generateSong(){
+
+  const topic =
+    document.getElementById("topic").value.trim();
+
+  const language =
+    document.getElementById("language").value;
+
+  const style =
+    document.getElementById("style").value;
+
+  const duration =
+    document.getElementById("duration").value;
+
+  const result =
+    document.getElementById("result");
+
+  const status =
+    document.getElementById("status");
+
+  if(!topic){
+    alert("Please enter a song topic first.");
+    return;
+  }
+
+  result.style.display="block";
+
+  status.innerHTML =
+    "⚡ Preparing your song...<br><br>" +
+    "Topic: " + topic + "<br>" +
+    "Language: " + language + "<br>" +
+    "Style: " + style + "<br>" +
+    "Duration: " + duration + "<br><br>" +
+    "🎵 AI Music Engine will be connected next.";
+
+}
+
+</script>
+
+</body>
+</html>
