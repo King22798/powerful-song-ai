@@ -6,56 +6,39 @@
 <title>Powerful Song AI</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
   font-family:Arial,sans-serif;
   min-height:100vh;
   background:linear-gradient(145deg,#080014,#18002f,#35005c);
   color:white;
-  padding:18px;
+  padding:18px
 }
 
-.container{
-  max-width:680px;
-  margin:auto;
-}
+.container{max-width:680px;margin:auto}
 
 .logo{
   text-align:center;
   font-size:30px;
   font-weight:900;
   margin:12px 0 6px;
-  text-shadow:0 0 20px #b000ff;
+  text-shadow:0 0 20px #b000ff
 }
 
-.subtitle{
-  text-align:center;
-  color:#ddd;
-  margin-bottom:22px;
-}
+.subtitle{text-align:center;color:#ddd;margin-bottom:22px}
 
 .card{
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.18);
   border-radius:22px;
   padding:20px;
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px)
 }
 
-label{
-  display:block;
-  margin:14px 0 7px;
-  font-weight:bold;
-}
+label{display:block;margin:14px 0 7px;font-weight:bold}
 
-input,
-textarea,
-select{
+textarea,select{
   width:100%;
   border:0;
   outline:none;
@@ -63,13 +46,10 @@ select{
   padding:14px;
   font-size:16px;
   background:#160d20;
-  color:white;
+  color:white
 }
 
-textarea{
-  min-height:140px;
-  resize:vertical;
-}
+textarea{min-height:140px;resize:vertical}
 
 button{
   width:100%;
@@ -82,15 +62,10 @@ button{
   color:white;
   background:linear-gradient(90deg,#7928ff,#d000ff);
   box-shadow:0 0 25px rgba(180,0,255,.45);
+  cursor:pointer
 }
 
-button:active{
-  transform:scale(.98);
-}
-
-button:disabled{
-  opacity:.55;
-}
+button:disabled{opacity:.55;cursor:not-allowed}
 
 .status{
   margin-top:18px;
@@ -98,7 +73,7 @@ button:disabled{
   border-radius:14px;
   background:rgba(0,0,0,.35);
   line-height:1.6;
-  display:none;
+  display:none
 }
 
 .result{
@@ -106,17 +81,12 @@ button:disabled{
   padding:18px;
   border-radius:18px;
   background:rgba(0,0,0,.35);
-  display:none;
+  display:none
 }
 
-.result h2{
-  margin-bottom:12px;
-}
+.result h2{margin-bottom:12px}
 
-audio{
-  width:100%;
-  margin-top:12px;
-}
+audio{width:100%;margin-top:12px}
 
 .download{
   display:block;
@@ -127,7 +97,7 @@ audio{
   background:#6d28d9;
   color:white;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:bold
 }
 
 .small{
@@ -135,12 +105,7 @@ audio{
   color:#aaa;
   margin-top:12px;
   line-height:1.5;
-}
-
-.showkey{
-  margin-top:8px;
-  font-size:13px;
-  color:#ccc;
+  text-align:center
 }
 </style>
 </head>
@@ -149,250 +114,249 @@ audio{
 
 <div class="container">
 
-  <div class="logo">🎵 POWERFUL SONG AI</div>
+<div class="logo">🎵 POWERFUL SONG AI</div>
 
-  <div class="subtitle">
-    Create Your Own Powerful Original Song
-  </div>
+<div class="subtitle">
+Create Your Own Powerful Original Song
+</div>
 
-  <div class="card">
+<div class="card">
 
-    <label>🔑 Musicful API Key</label>
-    <input
-      id="apiKey"
-      type="password"
-      placeholder="এখানে তোমার Musicful API Key বসাও"
-    >
+<label>🔥 Song Topic</label>
 
-    <div class="showkey">
-      <input id="showKey" type="checkbox" style="width:auto;">
-      Key দেখাও
-    </div>
+<textarea
+id="topic"
+placeholder="যেমন: কর্ণের শেষ প্রণাম, মহাদেব ভক্তি, 15 August, বিরহের গান..."
+></textarea>
 
-    <label>🔥 Song Topic</label>
-    <textarea
-      id="topic"
-      placeholder="যেমন: কর্ণের শেষ প্রণাম, মহাদেব ভক্তি, 15 August, বিরহের গান..."
-    ></textarea>
+<label>🌐 Language</label>
 
-    <label>🌐 Language</label>
-    <select id="language">
-      <option value="Hindi">Hindi</option>
-      <option value="Bengali">Bengali</option>
-      <option value="English">English</option>
-    </select>
+<select id="language">
+<option value="Hindi">Hindi</option>
+<option value="Bengali">Bengali</option>
+<option value="English">English</option>
+</select>
 
-    <label>🎼 Music Style</label>
-    <select id="style">
-      <option value="Powerful Cinematic">Powerful Cinematic</option>
-      <option value="Epic Bollywood">Epic Bollywood</option>
-      <option value="Devotional Anthem">Devotional Anthem</option>
-      <option value="Sad Emotional">Sad Emotional</option>
-      <option value="Romantic">Romantic</option>
-      <option value="Powerful DJ">Powerful DJ</option>
-      <option value="Purulia Folk DJ">Purulia Folk DJ</option>
-      <option value="Patriotic Anthem">Patriotic Anthem</option>
-      <option value="Cinematic Rock">Cinematic Rock</option>
-      <option value="Rap">Rap</option>
-    </select>
+<label>🎼 Music Style</label>
 
-    <label>🎤 Vocal</label>
-    <select id="gender">
-      <option value="male">Powerful Male Vocal</option>
-      <option value="female">Powerful Female Vocal</option>
-      <option value="">Auto</option>
-    </select>
+<select id="style">
+<option value="Powerful Cinematic">Powerful Cinematic</option>
+<option value="Epic Bollywood">Epic Bollywood</option>
+<option value="Devotional Anthem">Devotional Anthem</option>
+<option value="Sad Emotional">Sad Emotional</option>
+<option value="Romantic">Romantic</option>
+<option value="Powerful DJ">Powerful DJ</option>
+<option value="Purulia Folk DJ">Purulia Folk DJ</option>
+<option value="Patriotic Anthem">Patriotic Anthem</option>
+<option value="Cinematic Rock">Cinematic Rock</option>
+<option value="Rap">Rap</option>
+</select>
 
-    <label>🎹 Music Model</label>
-    <select id="model">
-      <option value="MFV3.0">MFV3.0</option>
-      <option value="MFV2.0">MFV2.0</option>
-      <option value="MFV1.5X">MFV1.5X</option>
-      <option value="MFV1.5">MFV1.5</option>
-      <option value="MFV1.0">MFV1.0</option>
-    </select>
+<label>🎤 Vocal</label>
 
-    <button id="generateBtn">
-      🔥 GENERATE POWERFUL SONG
-    </button>
+<select id="gender">
+<option value="male">Powerful Male Vocal</option>
+<option value="female">Powerful Female Vocal</option>
+<option value="">Auto</option>
+</select>
 
-    <div id="status" class="status"></div>
+<label>🎹 Music Model</label>
 
-    <div id="result" class="result">
-      <h2>🎵 Your Song</h2>
-      <div id="songInfo"></div>
-      <audio id="audio" controls></audio>
-      <a id="download" class="download" target="_blank">
-        ⬇️ DOWNLOAD / OPEN MP3
-      </a>
-    </div>
+<select id="model">
+<option value="MFV3.0">MFV3.0</option>
+<option value="MFV2.0">MFV2.0</option>
+<option value="MFV1.5X">MFV1.5X</option>
+<option value="MFV1.5">MFV1.5</option>
+<option value="MFV1.0">MFV1.0</option>
+</select>
 
-    <div class="small">
-      API key শুধু তোমার ব্রাউজারেই ব্যবহার হবে। GitHub-এর কোডের মধ্যে
-      তোমার আসল API key লেখা থাকবে না।
-    </div>
+<button id="generateBtn">
+🔥 GENERATE POWERFUL SONG
+</button>
 
-  </div>
+<div id="status" class="status"></div>
 
+<div id="result" class="result">
+
+<h2>🎵 Your Song</h2>
+
+<div id="songInfo"></div>
+
+<audio id="audio" controls></audio>
+
+<a
+id="download"
+class="download"
+target="_blank"
+rel="noopener"
+>
+⬇️ DOWNLOAD / OPEN MP3
+</a>
+
+</div>
+
+<div class="small">
+🔐 API key নিরাপদে Cloudflare Worker-এর Secret হিসেবে থাকবে।
+Browser-এ API key দেখানো হবে না।
+</div>
+
+</div>
 </div>
 
 <script>
 
-const apiKeyInput = document.getElementById("apiKey");
-const showKey = document.getElementById("showKey");
-const topic = document.getElementById("topic");
-const language = document.getElementById("language");
-const style = document.getElementById("style");
-const gender = document.getElementById("gender");
-const model = document.getElementById("model");
-const btn = document.getElementById("generateBtn");
+const topic=document.getElementById("topic");
+const language=document.getElementById("language");
+const style=document.getElementById("style");
+const gender=document.getElementById("gender");
+const model=document.getElementById("model");
+const btn=document.getElementById("generateBtn");
 
-const statusBox = document.getElementById("status");
-const resultBox = document.getElementById("result");
-const songInfo = document.getElementById("songInfo");
-const audio = document.getElementById("audio");
-const download = document.getElementById("download");
-
-showKey.addEventListener("change", function(){
-  apiKeyInput.type = this.checked ? "text" : "password";
-});
+const statusBox=document.getElementById("status");
+const resultBox=document.getElementById("result");
+const songInfo=document.getElementById("songInfo");
+const audio=document.getElementById("audio");
+const download=document.getElementById("download");
 
 function status(message){
-  statusBox.style.display = "block";
-  statusBox.innerHTML = message;
+  statusBox.style.display="block";
+  statusBox.innerHTML=message;
 }
 
-function getApiKey(){
-  return apiKeyInput.value.trim();
+function escapeHtml(str){
+  return String(str)
+  .replace(/&/g,"&amp;")
+  .replace(/</g,"&lt;")
+  .replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;")
+  .replace(/'/g,"&#039;");
 }
 
 async function generateSong(){
 
-  const key = getApiKey();
-  const subject = topic.value.trim();
-
-  if(!key){
-    status("❌ আগে Musicful API Key বসাও।");
-    return;
-  }
+  const subject=topic.value.trim();
 
   if(!subject){
-    status("❌ Song Topic লিখো।");
+    status("❌ আগে Song Topic লিখো।");
     return;
   }
 
-  btn.disabled = true;
-  resultBox.style.display = "none";
+  btn.disabled=true;
+  resultBox.style.display="none";
 
-  status("⏳ Musicful-এ গান তৈরির request পাঠানো হচ্ছে...");
+  status("⏳ গান তৈরির request পাঠানো হচ্ছে...");
 
   try{
 
-    const musicStyle =
-      `${style.value}, ${language.value} song, ${gender.value || "auto"} vocal, powerful original composition. Topic: ${subject}`;
+    const musicStyle=
+      `${style.value}, ${language.value} song, `+
+      `${gender.value || "auto"} vocal, `+
+      `powerful original composition. Topic: ${subject}`;
 
-    const body = {
-      action: "auto",
-      style: musicStyle,
-      mv: model.value,
-      instrumental: 0
+    const body={
+      action:"auto",
+      style:musicStyle,
+      mv:model.value,
+      instrumental:0,
+      gender:gender.value || ""
     };
 
-    const response = await fetch(
-      "https://api.musicful.ai/v1/music/generate",
-      {
-        method:"POST",
-        headers:{
-          "Content-Type":"application/json",
-          "x-api-key":key
-        },
-        body:JSON.stringify(body)
-      }
-    );
+    const response=await fetch("/api/generate",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(body)
+    });
 
-    const text = await response.text();
+    const text=await response.text();
 
     let data;
 
     try{
-      data = JSON.parse(text);
+      data=JSON.parse(text);
     }catch(e){
-      throw new Error("Musicful server থেকে সঠিক JSON response আসেনি: " + text);
+      throw new Error(
+        "Server থেকে সঠিক JSON response আসেনি: "+text
+      );
     }
 
     if(!response.ok){
       throw new Error(
-        data.detail
-        ? JSON.stringify(data.detail)
-        : (data.message || "API Error " + response.status)
+        data.message ||
+        data.detail ||
+        data.error ||
+        "API Error "+response.status
       );
     }
 
-    console.log("Musicful Generate Response:",data);
+    console.log("Generate Response:",data);
 
-    const ids = extractTaskIds(data);
+    const ids=extractTaskIds(data);
+    const directAudio=findAudioUrl(data);
 
-    if(ids.length === 0){
+    if(directAudio){
+      showSong(directAudio,data);
+      status("✅ গান তৈরি হয়ে গেছে!");
+      return;
+    }
 
-      if(findAudioUrl(data)){
-        showSong(findAudioUrl(data), data);
-        return;
-      }
-
+    if(ids.length===0){
       throw new Error(
-        "Generation request হয়েছে, কিন্তু Task ID পাওয়া যায়নি। Console-এ response দেখা যাবে।"
+        "Generation request হয়েছে, কিন্তু Task ID পাওয়া যায়নি।"
       );
     }
 
     status(
-      "🎵 গান তৈরির কাজ শুরু হয়েছে।<br><br>" +
-      "⏳ এখন Musicful গান তৈরি করছে...<br>" +
-      "এটা কিছুটা সময় নিতে পারে।"
+      "🎵 গান তৈরির কাজ শুরু হয়েছে।<br><br>"+
+      "⏳ Musicful গান তৈরি করছে..."
     );
 
-    await pollTasks(ids,key);
+    await pollTasks(ids);
 
   }catch(error){
 
     console.error(error);
 
     status(
-      "❌ সমস্যা হয়েছে।<br><br>" +
+      "❌ সমস্যা হয়েছে।<br><br>"+
       escapeHtml(error.message)
     );
 
   }finally{
-    btn.disabled = false;
+
+    btn.disabled=false;
+
   }
 }
 
 function extractTaskIds(data){
 
-  const ids = [];
+  const ids=[];
 
   function scan(obj){
 
-    if(!obj || typeof obj !== "object") return;
+    if(!obj || typeof obj!=="object") return;
 
     if(Array.isArray(obj)){
       obj.forEach(scan);
       return;
     }
 
-    if(obj.id && typeof obj.id === "string"){
+    if(obj.id && typeof obj.id==="string"){
       ids.push(obj.id);
     }
 
-    if(obj.task_id && typeof obj.task_id === "string"){
+    if(obj.task_id && typeof obj.task_id==="string"){
       ids.push(obj.task_id);
     }
 
-    if(obj.taskId && typeof obj.taskId === "string"){
+    if(obj.taskId && typeof obj.taskId==="string"){
       ids.push(obj.taskId);
     }
 
     Object.keys(obj).forEach(key=>{
-      if(typeof obj[key] === "object"){
+      if(obj[key] && typeof obj[key]==="object"){
         scan(obj[key]);
       }
     });
@@ -407,176 +371,95 @@ function findAudioUrl(data){
 
   if(!data) return null;
 
-  if(typeof data === "string"){
-    if(data.startsWith("http") &&
-      (data.includes(".mp3") ||
-       data.includes(".wav") ||
-       data.includes("audio"))){
+  if(typeof data==="string"){
+
+    if(
+      data.startsWith("http") &&
+      (
+        data.includes(".mp3") ||
+        data.includes(".wav") ||
+        data.includes("audio")
+      )
+    ){
       return data;
     }
+
     return null;
   }
 
   if(Array.isArray(data)){
+
     for(const item of data){
-      const url = findAudioUrl(item);
+
+      const url=findAudioUrl(item);
+
       if(url) return url;
+
     }
   }
 
-  if(typeof data === "object"){
+  if(typeof data==="object"){
 
-    const possible = [
+    const possible=[
       "audio_url",
       "audioUrl",
-      "url",
       "mp3_url",
-      "download_url"
+      "download_url",
+      "url"
     ];
 
     for(const key of possible){
-      if(typeof data[key] === "string" &&
-         data[key].startsWith("http")){
+
+      if(
+        typeof data[key]==="string" &&
+        data[key].startsWith("http")
+      ){
         return data[key];
       }
+
     }
 
     for(const key of Object.keys(data)){
-      if(typeof data[key] === "object"){
-        const url = findAudioUrl(data[key]);
+
+      if(
+        data[key] &&
+        typeof data[key]==="object"
+      ){
+
+        const url=findAudioUrl(data[key]);
+
         if(url) return url;
+
       }
+
     }
   }
 
   return null;
 }
 
-async function pollTasks(ids,key){
+async function pollTasks(ids){
 
-  let previewShown = false;
+  for(let attempt=1;attempt<=80;attempt++){
 
-  for(let attempt=1; attempt<=80; attempt++){
-
-    await new Promise(resolve=>setTimeout(resolve,7000));
-
-    status(
-      "🎼 গান তৈরি হচ্ছে...<br>" +
-      "⏳ Checking: " + attempt + "/80"
+    await new Promise(
+      resolve=>setTimeout(resolve,7000)
     );
 
-    const url =
-      "https://api.musicful.ai/v1/music/tasks?ids=" +
-      encodeURIComponent(ids.join(","));
+    status(
+      "🎼 গান তৈরি হচ্ছে...<br>"+
+      "⏳ Checking: "+attempt+"/80"
+    );
 
-    const response = await fetch(url,{
-      method:"GET",
-      headers:{
-        "x-api-key":key
-      }
-    });
+    const response=await fetch(
+      "/api/tasks?ids="+
+      encodeURIComponent(ids.join(","))
+    );
 
-    const text = await response.text();
+    const text=await response.text();
 
     let data;
 
     try{
-      data = JSON.parse(text);
+      data=JSON.parse(text);
     }catch(e){
-      throw new Error("Task status response পড়া যায়নি।");
-    }
-
-    console.log("Musicful Task:",data);
-
-    const tasks = Array.isArray(data)
-      ? data
-      : (Array.isArray(data.data) ? data.data : [data]);
-
-    for(const task of tasks){
-
-      if(!task) continue;
-
-      const audioUrl = task.audio_url || findAudioUrl(task);
-      const taskStatus = Number(task.status);
-
-      if(audioUrl && taskStatus === 2 && !previewShown){
-
-        previewShown = true;
-
-        status(
-          "🎧 PREVIEW READY!<br>" +
-          "গানটি তৈরি হয়ে গেছে। Final audio-এর জন্য অপেক্ষা করছি..."
-        );
-
-        showSong(audioUrl,task);
-      }
-
-      if(audioUrl && taskStatus === 0){
-
-        status(
-          "✅ গান সম্পূর্ণ তৈরি হয়েছে!<br>" +
-          "নিচে Play অথবা Download করো।"
-        );
-
-        showSong(audioUrl,task);
-        return;
-      }
-
-      if(task.fail_reason){
-
-        throw new Error(
-          "Musicful generation failed: " +
-          task.fail_reason
-        );
-      }
-    }
-  }
-
-  throw new Error(
-    "অনেকক্ষণ অপেক্ষা করার পরও গান সম্পূর্ণ হয়নি। কিছুক্ষণ পরে আবার চেষ্টা করো।"
-  );
-}
-
-function showSong(url,task){
-
-  resultBox.style.display = "block";
-
-  audio.src = url;
-  audio.style.display = "block";
-
-  download.href = url;
-  download.download = "powerful-song.mp3";
-
-  let info = "";
-
-  if(task && task.title){
-    info += "<b>Title:</b> " +
-      escapeHtml(task.title) + "<br>";
-  }
-
-  if(task && task.duration){
-    info += "<b>Duration:</b> " +
-      task.duration + " sec<br>";
-  }
-
-  songInfo.innerHTML =
-    info +
-    "<b>🎵 Audio Ready</b>";
-}
-
-function escapeHtml(str){
-
-  return String(str)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-}
-
-btn.addEventListener("click",generateSong);
-
-</script>
-
-</body>
-  </html>
