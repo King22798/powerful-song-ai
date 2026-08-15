@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Powerful Song AI</title>
+<title>POWERFUL SONG AI</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
 body{
   font-family:Arial,sans-serif;
   min-height:100vh;
@@ -15,98 +14,47 @@ body{
   color:white;
   padding:18px
 }
-
 .container{max-width:680px;margin:auto}
-
 .logo{
-  text-align:center;
-  font-size:30px;
-  font-weight:900;
-  margin:12px 0 6px;
-  text-shadow:0 0 20px #b000ff
+  text-align:center;font-size:30px;font-weight:900;
+  margin:12px 0 6px;text-shadow:0 0 20px #b000ff
 }
-
 .subtitle{text-align:center;color:#ddd;margin-bottom:22px}
-
 .card{
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.18);
-  border-radius:22px;
-  padding:20px;
+  border-radius:22px;padding:20px;
   backdrop-filter:blur(12px)
 }
-
 label{display:block;margin:14px 0 7px;font-weight:bold}
-
-textarea,select{
-  width:100%;
-  border:0;
-  outline:none;
-  border-radius:13px;
-  padding:14px;
-  font-size:16px;
-  background:#160d20;
-  color:white
+input,textarea,select{
+  width:100%;border:0;outline:none;border-radius:13px;
+  padding:14px;font-size:16px;background:#160d20;color:white
 }
-
 textarea{min-height:140px;resize:vertical}
-
 button{
-  width:100%;
-  margin-top:20px;
-  padding:16px;
-  border:0;
-  border-radius:15px;
-  font-size:18px;
-  font-weight:bold;
-  color:white;
+  width:100%;margin-top:20px;padding:16px;border:0;
+  border-radius:15px;font-size:18px;font-weight:bold;color:white;
   background:linear-gradient(90deg,#7928ff,#d000ff);
-  box-shadow:0 0 25px rgba(180,0,255,.45);
-  cursor:pointer
+  box-shadow:0 0 25px rgba(180,0,255,.45)
 }
-
-button:disabled{opacity:.55;cursor:not-allowed}
-
+button:disabled{opacity:.55}
 .status{
-  margin-top:18px;
-  padding:15px;
-  border-radius:14px;
-  background:rgba(0,0,0,.35);
-  line-height:1.6;
-  display:none
+  margin-top:18px;padding:15px;border-radius:14px;
+  background:rgba(0,0,0,.35);line-height:1.6;display:none
 }
-
 .result{
-  margin-top:18px;
-  padding:18px;
-  border-radius:18px;
-  background:rgba(0,0,0,.35);
-  display:none
+  margin-top:18px;padding:18px;border-radius:18px;
+  background:rgba(0,0,0,.35);display:none
 }
-
 .result h2{margin-bottom:12px}
-
 audio{width:100%;margin-top:12px}
-
 .download{
-  display:block;
-  text-align:center;
-  margin-top:12px;
-  padding:13px;
-  border-radius:12px;
-  background:#6d28d9;
-  color:white;
-  text-decoration:none;
-  font-weight:bold
+  display:block;text-align:center;margin-top:12px;padding:13px;
+  border-radius:12px;background:#6d28d9;color:white;
+  text-decoration:none;font-weight:bold
 }
-
-.small{
-  font-size:12px;
-  color:#aaa;
-  margin-top:12px;
-  line-height:1.5;
-  text-align:center
-}
+.small{font-size:12px;color:#aaa;margin-top:12px;line-height:1.5}
 </style>
 </head>
 
@@ -123,14 +71,10 @@ Create Your Own Powerful Original Song
 <div class="card">
 
 <label>🔥 Song Topic</label>
-
-<textarea
-id="topic"
-placeholder="যেমন: কর্ণের শেষ প্রণাম, মহাদেব ভক্তি, 15 August, বিরহের গান..."
-></textarea>
+<textarea id="topic"
+placeholder="যেমন: কর্ণের শেষ প্রণাম, মহাদেব ভক্তি, 15 August, বিরহের গান..."></textarea>
 
 <label>🌐 Language</label>
-
 <select id="language">
 <option value="Hindi">Hindi</option>
 <option value="Bengali">Bengali</option>
@@ -138,7 +82,6 @@ placeholder="যেমন: কর্ণের শেষ প্রণাম, ম�
 </select>
 
 <label>🎼 Music Style</label>
-
 <select id="style">
 <option value="Powerful Cinematic">Powerful Cinematic</option>
 <option value="Epic Bollywood">Epic Bollywood</option>
@@ -153,7 +96,6 @@ placeholder="যেমন: কর্ণের শেষ প্রণাম, ম�
 </select>
 
 <label>🎤 Vocal</label>
-
 <select id="gender">
 <option value="male">Powerful Male Vocal</option>
 <option value="female">Powerful Female Vocal</option>
@@ -161,7 +103,6 @@ placeholder="যেমন: কর্ণের শেষ প্রণাম, ম�
 </select>
 
 <label>🎹 Music Model</label>
-
 <select id="model">
 <option value="MFV3.0">MFV3.0</option>
 <option value="MFV2.0">MFV2.0</option>
@@ -170,29 +111,17 @@ placeholder="যেমন: কর্ণের শেষ প্রণাম, ম�
 <option value="MFV1.0">MFV1.0</option>
 </select>
 
-<button id="generateBtn">
-🔥 GENERATE POWERFUL SONG
-</button>
+<button id="generateBtn">🔥 GENERATE POWERFUL SONG</button>
 
 <div id="status" class="status"></div>
 
 <div id="result" class="result">
-
 <h2>🎵 Your Song</h2>
-
 <div id="songInfo"></div>
-
 <audio id="audio" controls></audio>
-
-<a
-id="download"
-class="download"
-target="_blank"
-rel="noopener"
->
+<a id="download" class="download" target="_blank">
 ⬇️ DOWNLOAD / OPEN MP3
 </a>
-
 </div>
 
 <div class="small">
@@ -211,16 +140,15 @@ const style=document.getElementById("style");
 const gender=document.getElementById("gender");
 const model=document.getElementById("model");
 const btn=document.getElementById("generateBtn");
-
 const statusBox=document.getElementById("status");
 const resultBox=document.getElementById("result");
 const songInfo=document.getElementById("songInfo");
 const audio=document.getElementById("audio");
 const download=document.getElementById("download");
 
-function status(message){
+function status(msg){
   statusBox.style.display="block";
-  statusBox.innerHTML=message;
+  statusBox.innerHTML=msg;
 }
 
 function escapeHtml(str){
@@ -230,6 +158,94 @@ function escapeHtml(str){
   .replace(/>/g,"&gt;")
   .replace(/"/g,"&quot;")
   .replace(/'/g,"&#039;");
+}
+
+function findIds(data){
+
+  const ids=[];
+
+  function scan(x){
+
+    if(!x || typeof x!=="object") return;
+
+    if(Array.isArray(x)){
+      x.forEach(scan);
+      return;
+    }
+
+    ["id","task_id","taskId"].forEach(k=>{
+      if(typeof x[k]==="string") ids.push(x[k]);
+    });
+
+    Object.values(x).forEach(v=>{
+      if(v && typeof v==="object") scan(v);
+    });
+  }
+
+  scan(data);
+
+  return [...new Set(ids)];
+}
+
+function findAudio(data){
+
+  if(!data) return null;
+
+  if(typeof data==="string"){
+    return data.startsWith("http") ? data : null;
+  }
+
+  if(Array.isArray(data)){
+    for(const x of data){
+      const u=findAudio(x);
+      if(u) return u;
+    }
+  }
+
+  if(typeof data==="object"){
+
+    const keys=[
+      "audio_url",
+      "audioUrl",
+      "mp3_url",
+      "download_url",
+      "url"
+    ];
+
+    for(const k of keys){
+      if(typeof data[k]==="string" &&
+         data[k].startsWith("http")){
+        return data[k];
+      }
+    }
+
+    for(const v of Object.values(data)){
+      if(v && typeof v==="object"){
+        const u=findAudio(v);
+        if(u) return u;
+      }
+    }
+  }
+
+  return null;
+}
+
+function showSong(url,task){
+
+  resultBox.style.display="block";
+
+  audio.src=url;
+  download.href=url;
+  download.download="powerful-song.mp3";
+
+  let info="<b>🎵 Audio Ready</b>";
+
+  if(task && task.title){
+    info="<b>Title:</b> "+
+      escapeHtml(task.title)+"<br><br>"+info;
+  }
+
+  songInfo.innerHTML=info;
 }
 
 async function generateSong(){
@@ -244,11 +260,11 @@ async function generateSong(){
   btn.disabled=true;
   resultBox.style.display="none";
 
-  status("⏳ গান তৈরির request পাঠানো হচ্ছে...");
+  status("⏳ Cloudflare Worker-এর মাধ্যমে Musicful-এ request পাঠানো হচ্ছে...");
 
   try{
 
-    const musicStyle=
+    const musicStyle =
       `${style.value}, ${language.value} song, `+
       `${gender.value || "auto"} vocal, `+
       `powerful original composition. Topic: ${subject}`;
@@ -257,8 +273,7 @@ async function generateSong(){
       action:"auto",
       style:musicStyle,
       mv:model.value,
-      instrumental:0,
-      gender:gender.value || ""
+      instrumental:0
     };
 
     const response=await fetch("/api/generate",{
@@ -275,36 +290,32 @@ async function generateSong(){
 
     try{
       data=JSON.parse(text);
-    }catch(e){
-      throw new Error(
-        "Server থেকে সঠিক JSON response আসেনি: "+text
-      );
+    }catch{
+      throw new Error("Server থেকে সঠিক response পাওয়া যায়নি।");
     }
 
     if(!response.ok){
       throw new Error(
+        data.error ||
         data.message ||
         data.detail ||
-        data.error ||
-        "API Error "+response.status
+        "Musicful API Error: "+response.status
       );
     }
 
-    console.log("Generate Response:",data);
+    const direct=findAudio(data);
 
-    const ids=extractTaskIds(data);
-    const directAudio=findAudioUrl(data);
-
-    if(directAudio){
-      showSong(directAudio,data);
-      status("✅ গান তৈরি হয়ে গেছে!");
+    if(direct){
+      status("✅ গান তৈরি হয়েছে!");
+      showSong(direct,data);
       return;
     }
 
-    if(ids.length===0){
-      throw new Error(
-        "Generation request হয়েছে, কিন্তু Task ID পাওয়া যায়নি।"
-      );
+    const ids=findIds(data);
+
+    if(!ids.length){
+      console.log("Musicful response:",data);
+      throw new Error("Musicful Task ID পাওয়া যায়নি।");
     }
 
     status(
@@ -330,121 +341,11 @@ async function generateSong(){
   }
 }
 
-function extractTaskIds(data){
-
-  const ids=[];
-
-  function scan(obj){
-
-    if(!obj || typeof obj!=="object") return;
-
-    if(Array.isArray(obj)){
-      obj.forEach(scan);
-      return;
-    }
-
-    if(obj.id && typeof obj.id==="string"){
-      ids.push(obj.id);
-    }
-
-    if(obj.task_id && typeof obj.task_id==="string"){
-      ids.push(obj.task_id);
-    }
-
-    if(obj.taskId && typeof obj.taskId==="string"){
-      ids.push(obj.taskId);
-    }
-
-    Object.keys(obj).forEach(key=>{
-      if(obj[key] && typeof obj[key]==="object"){
-        scan(obj[key]);
-      }
-    });
-  }
-
-  scan(data);
-
-  return [...new Set(ids)];
-}
-
-function findAudioUrl(data){
-
-  if(!data) return null;
-
-  if(typeof data==="string"){
-
-    if(
-      data.startsWith("http") &&
-      (
-        data.includes(".mp3") ||
-        data.includes(".wav") ||
-        data.includes("audio")
-      )
-    ){
-      return data;
-    }
-
-    return null;
-  }
-
-  if(Array.isArray(data)){
-
-    for(const item of data){
-
-      const url=findAudioUrl(item);
-
-      if(url) return url;
-
-    }
-  }
-
-  if(typeof data==="object"){
-
-    const possible=[
-      "audio_url",
-      "audioUrl",
-      "mp3_url",
-      "download_url",
-      "url"
-    ];
-
-    for(const key of possible){
-
-      if(
-        typeof data[key]==="string" &&
-        data[key].startsWith("http")
-      ){
-        return data[key];
-      }
-
-    }
-
-    for(const key of Object.keys(data)){
-
-      if(
-        data[key] &&
-        typeof data[key]==="object"
-      ){
-
-        const url=findAudioUrl(data[key]);
-
-        if(url) return url;
-
-      }
-
-    }
-  }
-
-  return null;
-}
-
 async function pollTasks(ids){
 
   for(let attempt=1;attempt<=80;attempt++){
 
-    await new Promise(
-      resolve=>setTimeout(resolve,7000)
-    );
+    await new Promise(r=>setTimeout(r,7000));
 
     status(
       "🎼 গান তৈরি হচ্ছে...<br>"+
@@ -452,8 +353,7 @@ async function pollTasks(ids){
     );
 
     const response=await fetch(
-      "/api/tasks?ids="+
-      encodeURIComponent(ids.join(","))
+      "/api/tasks?ids="+encodeURIComponent(ids.join(","))
     );
 
     const text=await response.text();
@@ -462,4 +362,50 @@ async function pollTasks(ids){
 
     try{
       data=JSON.parse(text);
-    }catch(e){
+    }catch{
+      throw new Error("Task status response পাওয়া যায়নি।");
+    }
+
+    const tasks=
+      Array.isArray(data)
+      ? data
+      : Array.isArray(data.data)
+      ? data.data
+      : [data];
+
+    for(const task of tasks){
+
+      const audioUrl=findAudio(task);
+      const taskStatus=Number(task.status);
+
+      if(task.fail_reason){
+        throw new Error(
+          "Musicful generation failed: "+
+          task.fail_reason
+        );
+      }
+
+      if(audioUrl && (taskStatus===0 || taskStatus===2)){
+
+        status(
+          "✅ গান তৈরি হয়ে গেছে!<br>"+
+          "নিচে Play অথবা Download করো।"
+        );
+
+        showSong(audioUrl,task);
+        return;
+      }
+    }
+  }
+
+  throw new Error(
+    "অনেকক্ষণ অপেক্ষা করার পরও গান তৈরি হয়নি।"
+  );
+}
+
+btn.addEventListener("click",generateSong);
+
+</script>
+
+</body>
+</html>
